@@ -3,11 +3,11 @@
   <title>丹尼爾の幻想世界</title>
   
   
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="https://www.6crazydaniel9.net/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
+  <link href="https://www.6crazydaniel9.net/"/>
   <updated>2022-02-18T09:36:35.516Z</updated>
-  <id>http://example.com/</id>
+  <id>https://www.6crazydaniel9.net/</id>
   
   <author>
     <name>CrazyDaniel</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>第一屆捷運盃黑客松-尋找黑捷客</title>
-    <link href="http://example.com/2022/02/16/metro/"/>
-    <id>http://example.com/2022/02/16/metro/</id>
+    <link href="https://www.6crazydaniel9.net/2022/02/16/metro/"/>
+    <id>https://www.6crazydaniel9.net/2022/02/16/metro/</id>
     <published>2022-02-16T12:04:27.000Z</published>
     <updated>2022-02-18T09:36:35.516Z</updated>
     
@@ -34,12 +34,12 @@
     
     
     
-    <category term="Contest" scheme="http://example.com/categories/Contest/"/>
+    <category term="Contest" scheme="https://www.6crazydaniel9.net/categories/Contest/"/>
     
     
-    <category term="Google map API" scheme="http://example.com/tags/Google-map-API/"/>
+    <category term="Google map API" scheme="https://www.6crazydaniel9.net/tags/Google-map-API/"/>
     
-    <category term="contest" scheme="http://example.com/tags/contest/"/>
+    <category term="contest" scheme="https://www.6crazydaniel9.net/tags/contest/"/>
     
   </entry>
   
