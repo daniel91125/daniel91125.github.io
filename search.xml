@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Leetcode - 34. Find First and Last Position of Element in Sorted Array</title>
+      <link href="/2022/07/16/leetcode34/"/>
+      <url>/2022/07/16/leetcode34/</url>
+      
+        <content type="html"><![CDATA[<h2 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h2><p>給予一串Array及目標數，找到其目標數在陣列第一次出現及最後一次出現的位置。</p><h2 id="解題方法"><a href="#解題方法" class="headerlink" title="解題方法"></a>解題方法</h2><p>這裡的話，因為題目有限制說時間複雜度必須在log(n)，所以無法直接用迴圈硬做。<br>但我的方法，跑出來時間也是蠻久的，就也沒厲害QQ<br>先使用一個Iterator去尋找目標數在陣列出現的第一個位置，再使用迴圈從那個位置去找最後一次出現的位置。</p><h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">searchRange</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(nums.<span class="built_in">size</span>() == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span>&#123;<span class="number">-1</span>,<span class="number">-1</span>&#125;;</span><br><span class="line">        </span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; ans;</span><br><span class="line">        </span><br><span class="line">        vector&lt;<span class="type">int</span>&gt;::iterator it1 = <span class="built_in">find</span>(nums.<span class="built_in">begin</span>(),nums.<span class="built_in">end</span>(),target);</span><br><span class="line">        <span class="type">int</span> firstPos = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(it1 != nums.<span class="built_in">end</span>())</span><br><span class="line">        &#123;</span><br><span class="line">            firstPos = <span class="built_in">distance</span>(nums.<span class="built_in">begin</span>(),it1);</span><br><span class="line">            ans.<span class="built_in">push_back</span>(firstPos);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="type">int</span> tmp = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = firstPos;i &lt; nums.<span class="built_in">size</span>();++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] == target)</span><br><span class="line">                tmp = i;</span><br><span class="line">        &#125;</span><br><span class="line">        ans.<span class="built_in">push_back</span>(tmp);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(ans.<span class="built_in">size</span>() == <span class="number">1</span>)</span><br><span class="line">            ans.<span class="built_in">push_back</span>(<span class="number">-1</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Leetcode </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Leetcode - 2. Add Two Numbers</title>
       <link href="/2022/07/15/leetcode2/"/>
       <url>/2022/07/15/leetcode2/</url>
