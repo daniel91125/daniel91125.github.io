@@ -6,7 +6,7 @@
   <link href="https://www.6crazydaniel9.net/atom.xml" rel="self"/>
   
   <link href="https://www.6crazydaniel9.net/"/>
-  <updated>2022-07-16T15:11:57.743Z</updated>
+  <updated>2022-07-17T17:38:35.801Z</updated>
   <id>https://www.6crazydaniel9.net/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Leetcode - 6. Zigzag Conversion</title>
+    <link href="https://www.6crazydaniel9.net/2022/07/18/leetcode6/"/>
+    <id>https://www.6crazydaniel9.net/2022/07/18/leetcode6/</id>
+    <published>2022-07-17T17:23:37.453Z</published>
+    <updated>2022-07-17T17:38:35.801Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h2><p>給予一個字串，將其排成Z形狀之後，再重新輸出模樣。<br>有點難以用文字形容，可能需要看過題目才會知道到底是怎麼一回事。</p><h2 id="解題方法"><a href="#解題方法" class="headerlink" title="解題方法"></a>解題方法</h2><p>這題其實實作起來不會太困難，主要是尋找到規律。如果發現其中的要點，就非常容易。<br>但因為我本身屬於偏笨那類型，也是上網查詢別人的題目解說，發現其規律所在。<br>要點就在於，把轉乘成Z字型的字元位置寫出來就可以發現其中的奧妙，題目解起來就變十分輕鬆。</p><p>像是題目給予的”PAYPALISHIRING”轉出來變成”PAHNAPLSIIGYIR”，那就將題目這樣轉變</p><pre>0   6    121 5 7 11 132 4 8 10 143   9      </pre><p>第一行相差：6<br>第二行是：4 2 4 2 相間隔，但加起來也為6<br>第三行是：2 4 2 4<br>第四行是：6 </p><p>就發現有規律去解題!!!</p><h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">convert</span><span class="params">(string s, <span class="type">int</span> numRows)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(numRows &lt;= <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> s;</span><br><span class="line">        string ans;</span><br><span class="line">        </span><br><span class="line">        <span class="type">int</span> a = (numRows*<span class="number">2</span>) - <span class="number">2</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;numRows;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">bool</span> flag = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=i;j&lt;s.<span class="built_in">length</span>();flag = flag?<span class="literal">false</span>:<span class="literal">true</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                ans+=s[j];</span><br><span class="line">                <span class="keyword">if</span>(i == <span class="number">0</span> || i == numRows<span class="number">-1</span>)</span><br><span class="line">                    j+=a;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(flag)</span><br><span class="line">                    j+=i*<span class="number">2</span>;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    j+=(a-(i*<span class="number">2</span>));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> ans; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;題目&quot;&gt;&lt;a href=&quot;#題目&quot; class=&quot;headerlink&quot; title=&quot;題目&quot;&gt;&lt;/a&gt;題目&lt;/h2&gt;&lt;p&gt;給予一個字串，將其排成Z形狀之後，再重新輸出模樣。&lt;br&gt;有點難以用文字形容，可能需要看過題目才會知道到底是怎麼一回事。&lt;/p&gt;
+&lt;h2 i</summary>
+      
+    
+    
+    
+    <category term="Leetcode" scheme="https://www.6crazydaniel9.net/categories/Leetcode/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Leetcode - 34. Find First and Last Position of Element in Sorted Array</title>
