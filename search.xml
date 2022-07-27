@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Leetcode - 114. Flatten Binary Tree to Linked List</title>
+      <link href="/2022/07/28/leetcode114/"/>
+      <url>/2022/07/28/leetcode114/</url>
+      
+        <content type="html"><![CDATA[<h2 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h2><p>將Binary Tree轉成Linked List，而Linked List的順序需以pre-order traversal尋訪的順序。</p><h2 id="解題方法"><a href="#解題方法" class="headerlink" title="解題方法"></a>解題方法</h2><p>採取的方法是參考網路上的。<br>主要是分別將節點以post-order的方式去做合併，這樣就可以達到題目所要求的目的。<br>先將左邊的節點串接在一起後，再放入右邊節點，而原本右節點就擺至最後。</p><h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">flatten</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">postorder</span>(root);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">postorder</span><span class="params">(TreeNode* node)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!node)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="built_in">postorder</span>(node-&gt;left);</span><br><span class="line">        <span class="built_in">postorder</span>(node-&gt;right);        </span><br><span class="line">        <span class="comment">//Merge node</span></span><br><span class="line">        TreeNode *tmp = node-&gt;right;</span><br><span class="line">        node-&gt;right = node-&gt;left;</span><br><span class="line">        node-&gt;left = <span class="literal">nullptr</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(node-&gt;right)</span><br><span class="line">            node = node-&gt;right;</span><br><span class="line">        </span><br><span class="line">        node-&gt;right = tmp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Leetcode </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Leetcode - 240. Search a 2D Matrix II</title>
       <link href="/2022/07/25/leetcode240/"/>
       <url>/2022/07/25/leetcode240/</url>
