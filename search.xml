@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Leetcode - 48. Rotate Image</title>
+      <link href="/2022/07/29/leetcode48/"/>
+      <url>/2022/07/29/leetcode48/</url>
+      
+        <content type="html"><![CDATA[<h2 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h2><p>給一個n x n的矩陣，將他轉90度後，輸出結果。</p><h2 id="解題方法"><a href="#解題方法" class="headerlink" title="解題方法"></a>解題方法</h2><p>找到轉90度後，矩陣的規律後，解題就會迅速許多。<br>原本矩陣的Column經過90度的轉至後，會變成Row，運用此項特性去解題!!!</p><h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">rotate</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; matrix)</span> </span>&#123;</span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; tmp;</span><br><span class="line">        <span class="type">int</span> edge = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(tmp.<span class="built_in">size</span>() != matrix.<span class="built_in">size</span>())</span><br><span class="line">        &#123;</span><br><span class="line">            vector&lt;<span class="type">int</span>&gt; t;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=matrix.<span class="built_in">size</span>()<span class="number">-1</span>;j&gt;=<span class="number">0</span>;--j)</span><br><span class="line">                t.<span class="built_in">push_back</span>(matrix[j][edge]);</span><br><span class="line">            tmp.<span class="built_in">push_back</span>(t);</span><br><span class="line">            edge++;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        matrix = tmp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Leetcode </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Leetcode - 114. Flatten Binary Tree to Linked List</title>
       <link href="/2022/07/28/leetcode114/"/>
       <url>/2022/07/28/leetcode114/</url>
