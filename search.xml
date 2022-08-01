@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Leetcode - 1290. Convert Binary Number in a Linked List to Integer</title>
+      <link href="/2022/08/01/leetcode1290/"/>
+      <url>/2022/08/01/leetcode1290/</url>
+      
+        <content type="html"><![CDATA[<h2 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h2><p>將Linked List內的Binary Number讀取出來，轉換成Integer</p><h2 id="解題方法"><a href="#解題方法" class="headerlink" title="解題方法"></a>解題方法</h2><p>先將Linked List內容讀取出來存放在Vector中，再將其轉成數字即可</p><h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">getDecimalValue</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; tmp = <span class="built_in">load</span>(head);</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">reverse</span>(tmp.<span class="built_in">begin</span>(),tmp.<span class="built_in">end</span>());</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;tmp.<span class="built_in">size</span>();++i)</span><br><span class="line">            ans += tmp[i]*<span class="built_in">pow</span>(<span class="number">2</span>,i);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">load</span><span class="params">(ListNode* &amp;node)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; res;</span><br><span class="line">        <span class="keyword">while</span>(node != <span class="literal">nullptr</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            res.<span class="built_in">push_back</span>(node-&gt;val);</span><br><span class="line">            node = node-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Leetcode </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Leetcode - 916. Word Subsets</title>
       <link href="/2022/07/30/leetcode916/"/>
       <url>/2022/07/30/leetcode916/</url>
