@@ -6,7 +6,7 @@
   <link href="https://www.6crazydaniel9.net/atom.xml" rel="self"/>
   
   <link href="https://www.6crazydaniel9.net/"/>
-  <updated>2022-08-01T07:57:31.487Z</updated>
+  <updated>2022-08-02T17:14:13.177Z</updated>
   <id>https://www.6crazydaniel9.net/</id>
   
   <author>
@@ -15,6 +15,52 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Leetcode - 876. Middle of the Linked List</title>
+    <link href="https://www.6crazydaniel9.net/2022/08/03/leetcode876/"/>
+    <id>https://www.6crazydaniel9.net/2022/08/03/leetcode876/</id>
+    <published>2022-08-02T17:09:44.072Z</published>
+    <updated>2022-08-02T17:14:13.177Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h2><p>從一個Linked List中，找到中間的節點，並且尋訪從中間到最後的節點</p><h2 id="解題方法"><a href="#解題方法" class="headerlink" title="解題方法"></a>解題方法</h2><p>因為要找到中間的節點，必須先知道Linked List總共的長度，這邊我就先計算Linked List整個長度<br>再直接從那個點開始回傳往後的點</p><h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">middleNode</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        ListNode *tmp = head;</span><br><span class="line">        <span class="type">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(tmp != <span class="literal">nullptr</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            ++count;</span><br><span class="line">            tmp = tmp-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        ListNode *ans = <span class="keyword">new</span> <span class="built_in">ListNode</span>();</span><br><span class="line">        ListNode *ptrNode = ans;</span><br><span class="line">        tmp = head;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;count;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(i &gt;= (count/<span class="number">2</span>))</span><br><span class="line">            &#123;</span><br><span class="line">                ans-&gt;next = <span class="keyword">new</span> <span class="built_in">ListNode</span>(tmp-&gt;val);</span><br><span class="line">                ans = ans-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">            tmp = tmp-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ptrNode-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;題目&quot;&gt;&lt;a href=&quot;#題目&quot; class=&quot;headerlink&quot; title=&quot;題目&quot;&gt;&lt;/a&gt;題目&lt;/h2&gt;&lt;p&gt;從一個Linked List中，找到中間的節點，並且尋訪從中間到最後的節點&lt;/p&gt;
+&lt;h2 id=&quot;解題方法&quot;&gt;&lt;a href=&quot;#解題方法</summary>
+      
+    
+    
+    
+    <category term="Leetcode" scheme="https://www.6crazydaniel9.net/categories/Leetcode/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Leetcode - 378. Kth Smallest Element in a Sorted Matrix</title>
+    <link href="https://www.6crazydaniel9.net/2022/08/03/leetcode378/"/>
+    <id>https://www.6crazydaniel9.net/2022/08/03/leetcode378/</id>
+    <published>2022-08-02T16:39:11.937Z</published>
+    <updated>2022-08-02T17:14:14.007Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h2><p>給予一個 n x n 排序好的矩陣，需要尋找一個第k小的值</p><h2 id="解題方法"><a href="#解題方法" class="headerlink" title="解題方法"></a>解題方法</h2><p>直接採去暴力法解決<br>將矩陣內容取出，再排序，直接return第k小的值出來</p><h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">kthSmallest</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; matrix, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; tmp;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;matrix.<span class="built_in">size</span>();++i)</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;matrix[i].<span class="built_in">size</span>();++j)</span><br><span class="line">                tmp.<span class="built_in">push_back</span>(matrix[i][j]);</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">sort</span>(tmp.<span class="built_in">begin</span>(),tmp.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">return</span> tmp[k<span class="number">-1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;題目&quot;&gt;&lt;a href=&quot;#題目&quot; class=&quot;headerlink&quot; title=&quot;題目&quot;&gt;&lt;/a&gt;題目&lt;/h2&gt;&lt;p&gt;給予一個 n x n 排序好的矩陣，需要尋找一個第k小的值&lt;/p&gt;
+&lt;h2 id=&quot;解題方法&quot;&gt;&lt;a href=&quot;#解題方法&quot; class=</summary>
+      
+    
+    
+    
+    <category term="Leetcode" scheme="https://www.6crazydaniel9.net/categories/Leetcode/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Leetcode - 1290. Convert Binary Number in a Linked List to Integer</title>
